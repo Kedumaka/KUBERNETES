@@ -19,7 +19,8 @@ sudo -i
 apt update -y
 
 Setting up appropriate hostname for each machine.
-#-----------------------------------------------
+-----------------------------------------------
+
 sudo hostnamectl set-hostname "kmaster-node"
 exec bash
 
