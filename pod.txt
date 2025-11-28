@@ -16,6 +16,30 @@ spec:
     ports:
     - containerPort: 80
 
+#1.1 Create mainfest file to create replicas of pod if case the pods go down
+
+apiVersion:apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx-app1
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ngnix-app
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:stable-otl
+    ports:
+    - containerPort: 80
+ selector:
+   matchLabels:
+     app: ngnix-app
+
 
 *******************************************************************
 
